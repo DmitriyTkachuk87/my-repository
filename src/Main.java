@@ -3,12 +3,12 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
                                 //указываем путь к файлу
-        String foldrePath = "C:/users/Professional/Desktop/обновить роутер";
-        File file = new File(foldrePath);
-        System.out.println(getFollderSize(file));
+        String folderPath = "C:/users/Professional/Desktop/обновить роутер";
+        File file = new File(folderPath);
+        System.out.println(getFolderSize(file));
     }
 
-    public static long getFollderSize(File folder) {
+    public static long getFolderSize(File folder) {
         if (folder.isFile()) {
             return folder.length(); // возвращаем размер файла
         }
@@ -17,7 +17,7 @@ public class Main {
 
         long sum = 0;
         for (File file : files) {
-            sum += getFollderSize(file); //рекурсия
+            sum += getFolderSize(file); //рекурсия
         }
         return sum;
     }
